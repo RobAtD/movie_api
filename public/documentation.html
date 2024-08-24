@@ -20,6 +20,7 @@
                 </tr>
             </thead>
             <tbody>
+                // GET all movies
                 <tr>
                     <td>Return a list of ALL movies to the user</td>
                     <td>/movies</td>
@@ -28,6 +29,7 @@
                     <td>none</td>
                     <td>A JSON object holding data about all movies</td>
                 </tr>
+                // GET a single movie
                 <tr>
                     <td>
                         Return data (description, genre, director, image URL,
@@ -52,6 +54,7 @@
                         }
                     </td>
                 </tr>
+                // GET a genre
                 <tr>
                     <td>
                         Return data about a genre (description) by name/title
@@ -72,6 +75,7 @@
                         }
                     </td>
                 </tr>
+                // GET a director
                 <tr>
                     <td>
                         Return data about a director (bio, birth year, death
@@ -93,6 +97,7 @@
                         }
                     </td>
                 </tr>
+                // POST a new user
                 <tr>
                     <td>Register a new user</td>
                     <td>/users/register</td>
@@ -109,6 +114,7 @@
                     </td>
                     <td>A confirmation or an error message.</td>
                 </tr>
+                // PUT a username
                 <tr>
                     <td>Allow users to update their username</td>
                     <td>/users/:username</td>
@@ -131,6 +137,7 @@
                         }
                     </td>
                 </tr>
+                POST a movie to list of favorites
                 <tr>
                     <td>
                         Allow users to add a movie to their list of favorites
@@ -147,6 +154,7 @@
                     </td>
                     <td>A confirmation or an error message.</td>
                 </tr>
+                // DELETE a movie from list of favorites
                 <tr>
                     <td>
                         Allow users to remove a movie of their list of favorites
@@ -163,6 +171,7 @@
                     </td>
                     <td>A confirmation or an error message.</td>
                 </tr>
+                // DELETE an existing user
                 <tr>
                     <td>Allow existing users to deregister</td>
                     <td>/users/:username/</td>
