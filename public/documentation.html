@@ -29,6 +29,76 @@
                     <td>none</td>
                     <td>A JSON object holding data about all movies</td>
                 </tr>
+                <!-- POST a single movie -->
+                <tr>
+                    <td>Add a new movie</td>
+                    <td>/movies/add</td>
+                    <td>POST</td>
+                    <td>none</td>
+                    <td>
+                        A JSON object holding data about a single movie
+                        including id, description, genre, director, actors,
+                        release year, image URL. Example: <br />
+                        {<br />
+                        &nbsp;&nbsp;"Title": "Star Wars: Episode 1"
+                        (required),<br />
+                        &nbsp;&nbsp;"Description": "A movie about Jedi and Sith"
+                        (required),<br />
+                        &nbsp;&nbsp;"Director":{ <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "George Lucas",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Bio": "A talented
+                        director...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Movies": ["Star Wars", "Indiana
+                        Jones"],<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Birthdate": "1944-05-14",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Deathdate": null,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Genre": {,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "Science Fiction",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Description": "A genre that
+                        explores futuristic concepts...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Actors": ["Mark Hammil", "Harrison
+                        Ford"],<br />
+                        &nbsp;&nbsp;"ReleaseYear": 1971,<br />
+                        &nbsp;&nbsp;"ImageURL":
+                        "https://www.exampleimage.com"<br />
+                        &nbsp;&nbsp;"Featured": true<br />
+                        }
+                    </td>
+                    <td>
+                        A JSON object holding data about a single movie
+                        including id, description, genre, director, actors,
+                        release year, image URL. Example: <br />
+                        {<br />
+                        &nbsp;&nbsp;"_id": "83bdw963b3id67asbcnvols73",<br />
+                        &nbsp;&nbsp;"Title": "Star Wars: Episode 1"
+                        (required),<br />
+                        &nbsp;&nbsp;"Description": "A movie about Jedi and Sith"
+                        (required),<br />
+                        &nbsp;&nbsp;"Director":{ <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "George Lucas",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Bio": "A talented
+                        director...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Movies": ["Star Wars", "Indiana
+                        Jones"],<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Birthdate": "1944-05-14",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Deathdate": null,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Genre": {,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "Science Fiction",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Description": "A genre that
+                        explores futuristic concepts...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Actors": ["Mark Hammil", "Harrison
+                        Ford"],<br />
+                        &nbsp;&nbsp;"ReleaseYear": 1971,<br />
+                        &nbsp;&nbsp;"ImageURL":
+                        "https://www.exampleimage.com"<br />
+                        &nbsp;&nbsp;"Featured": true<br />
+                        }
+                    </td>
+                </tr>
                 <!-- GET a single movie -->
                 <tr>
                     <td>
@@ -39,7 +109,7 @@
                     </td>
                     <td>/movies/:Title</td>
                     <td>GET</td>
-                    <td>title (URL parameter)</td>
+                    <td>Title (URL parameter)</td>
                     <td>none</td>
                     <td>
                         A JSON object holding data about a single movie
@@ -72,6 +142,83 @@
                         }
                     </td>
                 </tr>
+                <!-- PUT a single movie -->
+                <tr>
+                    <td>Allow an admin to update data about a single movie</td>
+                    <td>/movies/:Title</td>
+                    <td>PUT</td>
+                    <td>Title (URL parameter)</td>
+                    <td>
+                        A JSON object holding updated data about a single movie.
+                        Example: <br />
+                        {<br />
+                        &nbsp;&nbsp;"Title": "Star Wars: Episode 3"
+                        (required),<br />
+                        &nbsp;&nbsp;"Description": "A movie about Jedi and Sith"
+                        (required),<br />
+                        &nbsp;&nbsp;"Director":{ <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "George Lucas",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Bio": "A talented
+                        director...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Movies": ["Star Wars", "Indiana
+                        Jones"],<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Birthdate": "1944-05-14",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Deathdate": null,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Genre": {,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "Science Fiction",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Description": "A genre that
+                        explores futuristic concepts...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Actors": ["Mark Hammil", "Harrison
+                        Ford"],<br />
+                        &nbsp;&nbsp;"ReleaseYear": 1971,<br />
+                        &nbsp;&nbsp;"ImageURL":
+                        "https://www.exampleimage.com"<br />
+                        &nbsp;&nbsp;"Featured": true<br />
+                        }
+                    </td>
+                    <td>
+                        A JSON object holding updated data about a single movie.
+                        Example: <br />
+                        {<br />
+                        &nbsp;&nbsp;"_id": "83bdw963b3id67asbcnvols73",<br />
+                        &nbsp;&nbsp;"Title": "Star Wars: Episode 3"
+                        (required),<br />
+                        &nbsp;&nbsp;"Description": "A movie about Jedi and Sith"
+                        (required),<br />
+                        &nbsp;&nbsp;"Director":{ <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "George Lucas",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Bio": "A talented
+                        director...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Movies": ["Star Wars", "Indiana
+                        Jones"],<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Birthdate": "1944-05-14",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Deathdate": null,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Genre": {,<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Name": "Science Fiction",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;"Description": "A genre that
+                        explores futuristic concepts...",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+                        &nbsp;&nbsp;"Actors": ["Mark Hammil", "Harrison
+                        Ford"],<br />
+                        &nbsp;&nbsp;"ReleaseYear": 1971,<br />
+                        &nbsp;&nbsp;"ImageURL":
+                        "https://www.exampleimage.com"<br />
+                        &nbsp;&nbsp;"Featured": true<br />
+                        }
+                    </td>
+                </tr>
+                <!-- DELETE an existing movie -->
+                <tr>
+                    <td>Allow an admin to delete a movie</td>
+                    <td>/movies/:movieID/</td>
+                    <td>DELETE</td>
+                    <td>movieID (URL parameter)</td>
+                    <td>none</td>
+                    <td>A confirmation or an error message.</td>
+                </tr>
                 <!-- GET a genre -->
                 <tr>
                     <td>
@@ -99,7 +246,7 @@
                     </td>
                     <td>/director/:Name</td>
                     <td>GET</td>
-                    <td>name (URL parameter)</td>
+                    <td>Name (URL parameter)</td>
                     <td>none</td>
                     <td>
                         A JSON object holding data about a director including
@@ -178,14 +325,14 @@
                     &nbsp;&nbsp;"_id": "66d97c65f395cff30704a0c5"<br />
                     }
                 </td>
-                <!-- PUT a username -->
+                <!-- PUT by username -->
                 <tr>
-                    <td>Allow users to update their username</td>
+                    <td>Allow users to update their data</td>
                     <td>/users/:Username</td>
                     <td>PUT</td>
                     <td>username (URL parameter)</td>
                     <td>
-                        A JSON object holding updated data about the username.
+                        A JSON object holding updated data about a user.
                         Example: <br />
                         {<br />
                         &nbsp;&nbsp;"Username": "Nic Kelback",<br />
