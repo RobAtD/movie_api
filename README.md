@@ -1,8 +1,7 @@
 # Movie API
 
 ## Objective
-To build the server-side component of a “movies” web application. The web application will provide users with access to information about different
-movies, directors, and genres. Users will be able to sign up, update their personal information, and create a list of their favorite movies.
+To build the server-side component of a “movies” web application. The web application will provide users with access to information about different movies, directors, and genres. Users will be able to sign up, update their personal information, and create a list of their favorite movies.
 
 ## Essential Features
 - Return a list of ALL movies to the user
@@ -14,3 +13,15 @@ movies, directors, and genres. Users will be able to sign up, update their perso
 - Allow users to add a movie to their list of favorites
 - Allow users to remove a movie from their list of favorites
 - Allow existing users to deregister
+- Allow Admin to add a new movie
+- Allow Admin to update movie data by title
+- Allow Admin to delete a movie
+
+## Technical Requirements
+- Node.js
+- Express
+- MongoDB
+- Atlas
+- Mongoose
+- Passport
+- Heroku
