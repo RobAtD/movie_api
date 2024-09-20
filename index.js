@@ -11,9 +11,7 @@ const Movies = Models.Movie,
 const app = express();
 
 //mongoose.connect('mongodb://localhost:27017/movieAppDB');
-mongoose.connect(
-    'process.env.CONNETION_URI'
-);
+mongoose.connect('process.env.CONNECTION_URI');
 
 
 
