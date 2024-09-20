@@ -13,8 +13,6 @@ const app = express();
 //mongoose.connect('mongodb://localhost:27017/movieAppDB');
 mongoose.connect(process.env.CONNECTION_URI);
 
-
-
 app.use(morgan('common'));
 app.use(express.static('public'));
 app.use(express.json());
