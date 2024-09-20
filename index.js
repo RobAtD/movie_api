@@ -10,7 +10,12 @@ const Movies = Models.Movie,
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/movieAppDB');
+//mongoose.connect('mongodb://localhost:27017/movieAppDB');
+mongoose.connect(
+    'process.env.CONNETION_URI'
+);
+
+
 
 app.use(morgan('common'));
 app.use(express.static('public'));
