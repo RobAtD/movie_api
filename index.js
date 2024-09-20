@@ -303,9 +303,27 @@ app.get(
 //Update user data by Username
 app.put(
     '/users/:Username',
+    [
+        check('Username', 'Username is required')
+            .isLength({ min: 5 })
+            .optional({ nullable: true }),
+        check(
+            'Username',
+            'Username contains non alphanumeric characters - not allowed!'
+        ).isAlphanumeric(),
+        check('Email', 'Email does not appear to be valid')
+            .isEmail()
+            .optional({ nullable: true }),
+    ],
     passport.authenticate('jwt', { session: false }),
     async (req, res) => {
         // Condition to check added here
+        let errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(422).json({ errors: errors.array() });
+        }
+
         if (
             req.user.Username === req.params.Username ||
             req.user.Username === 'RobAt'
