@@ -326,15 +326,23 @@ app.put(
             req.user.Username === req.params.Username ||
             req.user.Username === 'RobAt'
         ) {
-            let hashedPassword = Users.hashPassword(req.body.Password);
+            let hashedPassword = () => {
+                if (req.body.Password) {
+                    return Users.hashPassword(req.body.Password);
+                } else {
+                    return req.body.Password;
+                }
+            };
+
             await Users.findOneAndUpdate(
                 { Username: req.params.Username },
                 {
                     $set: {
                         Username: req.body.Username,
-                        Password: hashedPassword,
+                        Password: hashedPassword(),
                         Email: req.body.Email,
                         Birthday: req.body.Birthday,
+                        FavoriteMovies: req.body.FavoriteMovies,
                     },
                 },
                 { new: true }
