@@ -24,6 +24,7 @@ let allowedOrigins = [
     'http://testsite.com',
     'http://localhost:1234',
     'https://robs-myflix.netlify.app',
+    'https://robatd.github.io/myFlix-Angular'
 ];
 
 app.use(cors({
